@@ -87,4 +87,8 @@ jobs:
       with:
         repository: "pyanodon/pyindustry"
         path: "pyindustry"
-      
+    - name: "List"
+      run: |
+        ls
+        ls pycoalprocessing
+        
