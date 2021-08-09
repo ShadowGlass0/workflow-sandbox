@@ -8,87 +8,83 @@ jobs:
       name: "Checkout pycoalprocessing"
       with:
         repository: "pyanodon/pycoalprocessing"
-        path: "pycoalprocessing"
+        path: "mods/pycoalprocessing"
     - uses: actions/checkout@master
       name: "Checkout pycoalprocessinggraphics"
       with:
         repository: "pyanodon/pycoalprocessinggraphics"
-        path: "pycoalprocessinggraphics" 
+        path: "mods/pycoalprocessinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyfusionenergy"
       with:
         repository: "pyanodon/pyfusionenergy"
-        path: "pyfusionenergy"
+        path: "mods/pyfusionenergy"
     - uses: actions/checkout@master
       name: "Checkout pyfusionenergygraphics"
       with:
         repository: "pyanodon/pyfusionenergygraphics"
-        path: "pyfusionenergygraphics" 
+        path: "mods/pyfusionenergygraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyhightech"
       with:
         repository: "pyanodon/pyhightech"
-        path: "pyhightech"
+        path: "mods/pyhightech"
     - uses: actions/checkout@master
       name: "Checkout pyhightechgraphics"
       with:
         repository: "pyanodon/pyhightechgraphics"
-        path: "pyhightechgraphics" 
+        path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyrawores"
       with:
         repository: "pyanodon/pyrawores"
-        path: "pyrawores"
+        path: "mods/pyrawores"
     - uses: actions/checkout@master
       name: "Checkout pyraworesgraphics"
       with:
         repository: "pyanodon/pyraworesgraphics"
-        path: "pyraworesgraphics" 
+        path: "mods/pyraworesgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pypetroleumhandling"
       with:
         repository: "pyanodon/pypetroleumhandling"
-        path: "pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
     - uses: actions/checkout@master
       name: "Checkout pypetroleumhandlinggraphics"
       with:
         repository: "pyanodon/pypetroleumhandlinggraphics"
-        path: "pypetroleumhandlinggraphics" 
+        path: "mods/pypetroleumhandlinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyalienlife"
       with:
         repository: "pyanodon/pyalienlife"
-        path: "pyalienlife"
+        path: "mods/pyalienlife"
     - uses: actions/checkout@master
       name: "Checkout pyalienlifegraphics1"
       with:
         repository: "pyanodon/pyalienlifegraphics1"
-        path: "pyalienlifegraphics1" 
+        path: "mods/pyalienlifegraphics1" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyalienlifegraphics2"
       with:
         repository: "pyanodon/pyalienlifegraphics2"
-        path: "pyalienlifegraphics2" 
+        path: "mods/pyalienlifegraphics2" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyalienlifegraphics3"
       with:
         repository: "pyanodon/pyalienlifegraphics3"
-        path: "pyalienlifegraphics3" 
+        path: "mods/pyalienlifegraphics3" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
     - uses: actions/checkout@master
       name: "Checkout pyindustry"
       with:
         repository: "pyanodon/pyindustry"
-        path: "pyindustry"
-    - name: "List"
-      run: |
-        ls
-        ls pycoalprocessing
+        path: "mods/pyindustry"
         
