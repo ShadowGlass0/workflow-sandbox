@@ -1,9 +1,621 @@
 name: "Checkout test"
 on: [workflow_dispatch]
 jobs:
-  pycheckout:
+  test_pycp:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyfe:
+    needs: test_pycp
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyfeind:
+    needs: test_pyfe
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+  test_pyht:
+    needs: test_pyfe
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "mods/pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "mods/pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyhtind:
+    needs: [test_pyht, test_pyfeind]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "mods/pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "mods/pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+  test_pyro:
+    needs: test_pyfeind
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "mods/pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "mods/pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyroht:
+    needs: [test_pyro, test_pyht]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "mods/pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "mods/pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "mods/pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "mods/pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyph:
+    needs: test_pyfeind
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "mods/pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyphht:
+    needs: [test_pyph, test_pyht]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "mods/pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "mods/pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "mods/pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyroph:
+    needs: [test_pyro, test_pyph]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "mods/pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "mods/pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "mods/pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyrophht:
+    needs: [test_pyroph, test_pyht]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "mods/pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "mods/pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "mods/pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "mods/pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "mods/pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test_pyal:
+    needs: test_pyroph
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "mods/pycoalprocessing"
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessinggraphics"
+      with:
+        repository: "pyanodon/pycoalprocessinggraphics"
+        path: "mods/pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "mods/pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "mods/pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "mods/pyindustry"
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "mods/pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "mods/pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "mods/pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "mods/pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlife"
+      with:
+        repository: "pyanodon/pyalienlife"
+        path: "mods/pyalienlife"
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics1"
+      with:
+        repository: "pyanodon/pyalienlifegraphics1"
+        path: "mods/pyalienlifegraphics1" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics2"
+      with:
+        repository: "pyanodon/pyalienlifegraphics2"
+        path: "mods/pyalienlifegraphics2" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics3"
+      with:
+        repository: "pyanodon/pyalienlifegraphics3"
+        path: "mods/pyalienlifegraphics3" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+  test-pyalht:
+    needs: [test_pyal, test_pyht]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      name: "Checkout pycoalprocessing"
+      with:
+        repository: "Afforess/Factorio-Stdlib"
+        ref: v1.4.6
+        path: "mods/stdlib"
     - uses: actions/checkout@master
       name: "Checkout pycoalprocessing"
       with:
