@@ -1,0 +1,10 @@
+name: "Checkout test"
+on: [workflow_dispatch]
+jobs:
+  pycheckout:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+      with:
+        repository: "pyanodon/pycoalprocessing"
+        path: "pycoalprocessing"
