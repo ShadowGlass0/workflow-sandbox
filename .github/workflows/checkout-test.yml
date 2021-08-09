@@ -14,3 +14,4 @@ jobs:
       with:
         repository: "pyanodon/pycoalprocessinggraphics"
         path: "pycoalprocessinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
