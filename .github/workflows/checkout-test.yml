@@ -15,3 +15,76 @@ jobs:
         repository: "pyanodon/pycoalprocessinggraphics"
         path: "pycoalprocessinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergy"
+      with:
+        repository: "pyanodon/pyfusionenergy"
+        path: "pyfusionenergy"
+    - uses: actions/checkout@master
+      name: "Checkout pyfusionenergygraphics"
+      with:
+        repository: "pyanodon/pyfusionenergygraphics"
+        path: "pyfusionenergygraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyhightech"
+      with:
+        repository: "pyanodon/pyhightech"
+        path: "pyhightech"
+    - uses: actions/checkout@master
+      name: "Checkout pyhightechgraphics"
+      with:
+        repository: "pyanodon/pyhightechgraphics"
+        path: "pyhightechgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyrawores"
+      with:
+        repository: "pyanodon/pyrawores"
+        path: "pyrawores"
+    - uses: actions/checkout@master
+      name: "Checkout pyraworesgraphics"
+      with:
+        repository: "pyanodon/pyraworesgraphics"
+        path: "pyraworesgraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandling"
+      with:
+        repository: "pyanodon/pypetroleumhandling"
+        path: "pypetroleumhandling"
+    - uses: actions/checkout@master
+      name: "Checkout pypetroleumhandlinggraphics"
+      with:
+        repository: "pyanodon/pypetroleumhandlinggraphics"
+        path: "pypetroleumhandlinggraphics" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlife"
+      with:
+        repository: "pyanodon/pyalienlife"
+        path: "pyalienlife"
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics1"
+      with:
+        repository: "pyanodon/pyalienlifegraphics1"
+        path: "pyalienlifegraphics1" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics2"
+      with:
+        repository: "pyanodon/pyalienlifegraphics2"
+        path: "pyalienlifegraphics2" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyalienlifegraphics3"
+      with:
+        repository: "pyanodon/pyalienlifegraphics3"
+        path: "pyalienlifegraphics3" 
+        token: ${{ secrets.SHADOWGLASS_PAT }}
+    - uses: actions/checkout@master
+      name: "Checkout pyindustry"
+      with:
+        repository: "pyanodon/pyindustry"
+        path: "pyindustry"
+      
