@@ -466,7 +466,7 @@ jobs:
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyrophht:
     name: "Test PyRO, PyPH, PyHT"
-    needs: [test_pyroph, test_pyht]
+    needs: [test_pyroph, test_pyroht, test_pyphht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
@@ -620,7 +620,7 @@ jobs:
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test-pyalht:
     name: "Test PyAL, PyHT"
-    needs: [test_pyal, test_pyht]
+    needs: [test_pyal, test_pyrophht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
