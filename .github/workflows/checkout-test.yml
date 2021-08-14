@@ -2,10 +2,11 @@ name: "Checkout test"
 on: [workflow_dispatch]
 jobs:
   test_pycp:
+    name: "Test PyCoal"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -22,11 +23,12 @@ jobs:
         path: "mods/pycoalprocessinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyfe:
+    name: "Test PyCoal, PyFE"
     needs: test_pycp
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -54,11 +56,12 @@ jobs:
         path: "mods/pyfusionenergygraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyfeind:
+    name: "Test PyCoal, PyFE, PyInd"
     needs: test_pyfe
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -91,11 +94,12 @@ jobs:
         repository: "pyanodon/pyindustry"
         path: "mods/pyindustry"
   test_pyht:
+    name: "Test PyCoal, PyFE, PyHT"
     needs: test_pyfe
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -134,11 +138,12 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyhtind:
+    name: "Test PyCoal, PyFE, PyHT, PyInd"
     needs: [test_pyht, test_pyfeind]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -182,11 +187,12 @@ jobs:
         repository: "pyanodon/pyindustry"
         path: "mods/pyindustry"
   test_pyro:
+    name: "Test PyCoal, PyFE, PyInd, PyRO"
     needs: test_pyfeind
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -230,11 +236,12 @@ jobs:
         path: "mods/pyraworesgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyroht:
+    name: "Test PyCoal, PyFE, PyInd, PyRO, PyHT"
     needs: [test_pyro, test_pyht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -289,11 +296,12 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyph:
+    name: "Test PyCoal, PyFE, PyInd, PyPH"
     needs: test_pyfeind
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -337,11 +345,12 @@ jobs:
         path: "mods/pypetroleumhandlinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyphht:
+    name: "Test PyCoal, PyFE, PyInd, PyPH, PyHT"
     needs: [test_pyph, test_pyht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -396,11 +405,12 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyroph:
+    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH"
     needs: [test_pyro, test_pyph]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -455,11 +465,12 @@ jobs:
         path: "mods/pypetroleumhandlinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyrophht:
+    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyHT"
     needs: [test_pyroph, test_pyht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -525,11 +536,12 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyal:
+    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyAL"
     needs: test_pyroph
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
@@ -607,11 +619,12 @@ jobs:
         path: "mods/pyalienlifegraphics3" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test-pyalht:
+    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyAL, PyHT"
     needs: [test_pyal, test_pyht]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-      name: "Checkout pycoalprocessing"
+      name: "Checkout stdlib"
       with:
         repository: "Afforess/Factorio-Stdlib"
         ref: v1.4.6
