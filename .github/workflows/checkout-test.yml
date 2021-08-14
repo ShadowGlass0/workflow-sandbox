@@ -23,7 +23,7 @@ jobs:
         path: "mods/pycoalprocessinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyfe:
-    name: "Test PyCoal, PyFE"
+    name: "Test PyFE"
     needs: test_pycp
     runs-on: ubuntu-latest
     steps:
@@ -56,7 +56,7 @@ jobs:
         path: "mods/pyfusionenergygraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyfeind:
-    name: "Test PyCoal, PyFE, PyInd"
+    name: "Test PyInd"
     needs: test_pyfe
     runs-on: ubuntu-latest
     steps:
@@ -94,7 +94,7 @@ jobs:
         repository: "pyanodon/pyindustry"
         path: "mods/pyindustry"
   test_pyht:
-    name: "Test PyCoal, PyFE, PyHT"
+    name: "Test PyHT"
     needs: test_pyfe
     runs-on: ubuntu-latest
     steps:
@@ -138,7 +138,7 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyhtind:
-    name: "Test PyCoal, PyFE, PyHT, PyInd"
+    name: "Test PyHT, PyInd"
     needs: [test_pyht, test_pyfeind]
     runs-on: ubuntu-latest
     steps:
@@ -187,7 +187,7 @@ jobs:
         repository: "pyanodon/pyindustry"
         path: "mods/pyindustry"
   test_pyro:
-    name: "Test PyCoal, PyFE, PyInd, PyRO"
+    name: "Test PyRO"
     needs: test_pyfeind
     runs-on: ubuntu-latest
     steps:
@@ -236,7 +236,7 @@ jobs:
         path: "mods/pyraworesgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyroht:
-    name: "Test PyCoal, PyFE, PyInd, PyRO, PyHT"
+    name: "Test PyRO, PyHT"
     needs: [test_pyro, test_pyht]
     runs-on: ubuntu-latest
     steps:
@@ -296,7 +296,7 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyph:
-    name: "Test PyCoal, PyFE, PyInd, PyPH"
+    name: "Test PyPH"
     needs: test_pyfeind
     runs-on: ubuntu-latest
     steps:
@@ -345,7 +345,7 @@ jobs:
         path: "mods/pypetroleumhandlinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyphht:
-    name: "Test PyCoal, PyFE, PyInd, PyPH, PyHT"
+    name: "Test PyPH, PyHT"
     needs: [test_pyph, test_pyht]
     runs-on: ubuntu-latest
     steps:
@@ -405,7 +405,7 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyroph:
-    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH"
+    name: "Test PyRO, PyPH"
     needs: [test_pyro, test_pyph]
     runs-on: ubuntu-latest
     steps:
@@ -465,7 +465,7 @@ jobs:
         path: "mods/pypetroleumhandlinggraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyrophht:
-    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyHT"
+    name: "Test PyRO, PyPH, PyHT"
     needs: [test_pyroph, test_pyht]
     runs-on: ubuntu-latest
     steps:
@@ -536,7 +536,7 @@ jobs:
         path: "mods/pyhightechgraphics" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test_pyal:
-    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyAL"
+    name: "Test PyAL"
     needs: test_pyroph
     runs-on: ubuntu-latest
     steps:
@@ -619,7 +619,7 @@ jobs:
         path: "mods/pyalienlifegraphics3" 
         token: ${{ secrets.SHADOWGLASS_PAT }}
   test-pyalht:
-    name: "Test PyCoal, PyFE, PyInd, PyRO, PyPH, PyAL, PyHT"
+    name: "Test PyAL, PyHT"
     needs: [test_pyal, test_pyht]
     runs-on: ubuntu-latest
     steps:
