@@ -12,6 +12,8 @@ jobs:
         run: echo $GITHUB_WORKSPACE
       - name: Currdir
         run: pwd
+      - name: Test.txt
+        run: touch test.txt
       - name: Hello world action step
         id: hello
         uses: ShadowGlass0/hello-world-docker-action@main
