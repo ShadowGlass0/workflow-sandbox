@@ -5,20 +5,8 @@ on: [workflow_dispatch]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Factorio action test
     steps:
-      - name: Workdir
-        id: workdir
-        run: echo $GITHUB_WORKSPACE
-      - name: Currdir
-        run: pwd
-      - name: Test.txt
-        run: touch test.txt
-      - name: Hello world action step
-        id: hello
-        uses: ShadowGlass0/hello-world-docker-action@main
-        with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Factorio docker test
+        id: factorio
+        uses: ShadowGlass0/factorio-docker-for-github-actions@main
