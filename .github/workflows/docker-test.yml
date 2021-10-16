@@ -7,6 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Factorio action test
     steps:
+      - uses: actions/checkout@v2
+        name: "Checkout stdlib"
+        with:
+          repository: "Afforess/Factorio-Stdlib"
+          ref: v1.4.6
+          path: "factorio/mods/stdlib"
+      - uses: actions/checkout@v2
+        name: "Checkout pyindustry"
+        with:
+          repository: "pyanodon/pyindustry"
+          path: "factorio/mods/pyindustry"
       - name: Factorio docker test
         id: factorio
         uses: ShadowGlass0/factorio-docker-for-github-actions@main
