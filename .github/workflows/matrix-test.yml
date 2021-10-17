@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
+      matrix: ${{fromJSON(needs.genereate_matrix.outputs.matrix)}}
     steps:
       - if: ${{ matrix.pycoalprocessing }}
         run: echo pycoalprocessing
