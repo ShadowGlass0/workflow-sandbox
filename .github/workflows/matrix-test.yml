@@ -13,7 +13,7 @@ jobs:
       - id: checkout
         uses: actions/checkout@v2
       - id: set-matrix
-        run: cat <(echo "::set-output name=matrix::") mod-sets.json
+        run: cat <(echo -n "::set-output name=matrix::") <(jq -c <mod-sets.json)
   run_tests:
     name: "Run tests"
     needs: genereate_matrix
