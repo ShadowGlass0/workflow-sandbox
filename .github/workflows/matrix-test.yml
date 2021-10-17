@@ -1,0 +1,29 @@
+name: "Matrix test"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  genereate_matrix:
+    name: "Generate strategy matrix"
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - id: checkout
+        uses: actions/checkout@v2
+      - id: set-matrix
+        run: cat <(echo "::set-output name=matrix::") mod-sets.json
+  run_tests:
+    name: "Run tests"
+    needs: genereate_matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
+    steps:
+      - if: ${{ matrix.pycoalprocessing }}
+        run: echo pycoalprocessing
+      - if: ${{ matrix.pyindustry }}
+        run: echo pyindustry
+      

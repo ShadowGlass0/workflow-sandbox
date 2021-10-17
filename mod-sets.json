@@ -1,0 +1,14 @@
+{
+    "include": [
+        {
+            "pycoalprocessing": true
+        },
+        {
+            "pyindustry": true
+        },
+        {
+            "pycoalprocessing": true,
+            "pyindustry": true
+        }
+    ]
+}
