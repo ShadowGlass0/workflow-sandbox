@@ -9,3 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ secrets.TEST_SECRET }}
+      - uses: actions/checkout@master
+        name: "Checkout pycoalprocessinggraphics"
+        with:
+          repository: "pyanodon/pycoalprocessinggraphics"
+          path: "mods/pycoalprocessinggraphics" 
+          token: ${{ secrets.SHADOWGLASS_PAT }}
