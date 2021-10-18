@@ -1,0 +1,11 @@
+name: "Reuse test"
+
+on: 
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ secrets.TEST_SECRET }}
