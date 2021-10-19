@@ -1,0 +1,21 @@
+name: Pull request test
+
+on:
+  pull_request_target:
+    
+permissions:
+  contents: read
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge 
