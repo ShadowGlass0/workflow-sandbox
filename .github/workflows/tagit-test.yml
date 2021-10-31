@@ -15,4 +15,4 @@ jobs:
       - uses: fischerscode/tagger@v0.1
         with:
           prefix: v
-          tag: v1.0.0
+          tag: v1.0.1
