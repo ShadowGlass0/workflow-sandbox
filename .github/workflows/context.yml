@@ -29,7 +29,9 @@ jobs:
       - name: matrix-test
         env:
           VAR_VERSION: ${{ matrix.version }}
-        run: echo "$VAR_VERSION"
+        run: |
+          echo "$VAR_VERSION"
+          if [ "$VAR_VERSION" = "12" ]; then exit 1; fi
   four:
     runs-on: ubuntu-latest
     needs: [three]
