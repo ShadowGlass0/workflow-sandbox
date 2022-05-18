@@ -40,7 +40,7 @@ jobs:
       - name: Dump Needs context
         env:
           GITHUB_CONTEXT: ${{ toJSON(needs) }}
-          MATRIX_RESULT: ${{ needs.three.result }}
+          MATRIX_RESULT: ${{ (needs.one.result == "success") && needs.three.result || needs.one.result }}
         run: |
           echo "$GITHUB_CONTEXT" 
           echo "$MATRIX_RESULT"
