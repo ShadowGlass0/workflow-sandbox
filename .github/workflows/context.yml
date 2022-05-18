@@ -47,6 +47,7 @@ jobs:
   five:
     runs-on: ubuntu-latest
     needs: [one, two, three, four]
+    if: always()
     steps:
       - name: View context attributes
         uses: actions/github-script@v6
