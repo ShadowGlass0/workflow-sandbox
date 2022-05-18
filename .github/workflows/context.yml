@@ -28,16 +28,15 @@ jobs:
       matrix:
         version: [10, 12, 14]
     steps:
-      - name: matrix-test
+      - name: set-env
         env:
           VAR_VERSION: ${{ matrix.version }}
+      - name: matrix-test
         run: |
           echo "$VAR_VERSION"
           if [ "$VAR_VERSION" = "12" ]; then exit 1; fi
       - id: test
         if: ${{ job.status == 'failure' }}
-        env:
-          VAR_VERSION: ${{ matrix.version }}
         run: echo "::set-output name=num::$VAR_VERSION"        
   four:
     runs-on: ubuntu-latest
